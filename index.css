@@ -1,0 +1,342 @@
+.nav{
+    margin-top: -25px;
+    padding-top: 5px;
+    padding-bottom: 1px;
+    /* padding: 5px auto 12px auto; */
+    /* padding: 1px; */
+    width:100%;
+    display: block;
+    color: #f3f3f3;
+    background-color: #3498db;
+}
+.nav h1{
+    font-size: 40px;
+    font-family: monospace;
+}
+#form {
+    padding-top: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: -40vh;
+    margin: -40vh auto 0vh auto;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    /* margin: auto auto; */
+}
+#fileInput{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+#textOutput {
+    width: 500px;
+    height: 300px;
+    margin-top: 20px;
+    background-color: rgb(157, 232, 241);
+    /* box-shadow: 20px 50px 80px rgba(179, 38, 38, 0.25); */
+        border-radius: 10px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* submit button */
+/*bg*/
+/*txt*/
+/*success*/
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    top: 20px;
+    left: 20px;
+}
+
+.buttons button {
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    margin: 20px;
+    color: #568fa6;
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+.buttons button:before,
+.buttons button:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #44d8a4;
+    transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button:before {
+    right: 0;
+    top: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button:after {
+    left: 0;
+    bottom: 0;
+}
+
+.buttons button span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.buttons button span:before,
+.buttons button span:after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 0;
+    background-color: #44d8a4;
+    transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button span:before {
+    right: 0;
+    top: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+}
+
+.buttons button span:after {
+    left: 0;
+    bottom: 0;
+}
+
+.buttons button p {
+    padding: 0;
+    margin: 0;
+    transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.buttons button p:before,
+.buttons button p:after {
+    position: absolute;
+    width: 100%;
+    transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+    z-index: 1;
+    left: 0;
+}
+
+.buttons button p:before {
+    content: attr(data-title);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.buttons button p:after {
+    content: attr(data-text);
+    top: 150%;
+    color: #44d8a4;
+}
+
+.buttons button:hover:before,
+.buttons button:hover:after {
+    width: 100%;
+}
+
+.buttons button:hover span {
+    z-index: 1;
+}
+
+.buttons button:hover span:before,
+.buttons button:hover span:after {
+    height: 100%;
+}
+
+.buttons button:hover p:before {
+    top: -50%;
+    transform: rotate(5deg);
+}
+
+.buttons button:hover p:after {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.buttons button.start {
+    background-color: #44d8a4;
+    box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.buttons button.start p:before {
+    top: -50%;
+    transform: rotate(5deg);
+}
+
+.buttons button.start p:after {
+    color: white;
+    transition: all 0s ease;
+    content: attr(data-start);
+    top: 50%;
+    transform: translateY(-50%);
+    animation: start 0.3s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes start {
+    from {
+        top: -50%;
+    }
+}
+
+.buttons button.start:hover:before,
+.buttons button.start:hover:after {
+    display: none;
+}
+
+.buttons button.start:hover span {
+    display: none;
+}
+
+.buttons button:active {
+    outline: none;
+    border: none;
+}
+
+.buttons button:focus {
+    outline: 0;
+}
+
+/* ----------------------buttton---------------------- */
+#fileInput {
+    display: inline-block;
+    position: relative;
+    padding: 10px 25px;
+    background-color: #4CC713;
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 0.9em;
+    text-align: center;
+    text-indent: 15px;
+    border: none;
+    border-radius: 2em;
+    font-weight: bold;
+}
+
+#fileInput:hover {
+    background-color: #1a60a2;
+    color: white;
+}
+
+#fileInput:before,
+#fileInput:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 52%;
+}
+
+#fileInput:before {
+    width: 10px;
+    height: 2px;
+    border-style: solid;
+    border-width: 0 2px 2px;
+}
+
+#fileInput:after {
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    margin-top: -7px;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: transparent;
+    border-top-color: inherit;
+    animation: downloadArrow 1s linear infinite;
+    animation-play-state: paused;
+}
+
+#fileInput:hover:before {
+    border-color: #bdd3ef;
+}
+
+#fileInput:hover:after {
+    border-top-color: #eff1f7;
+    animation-play-state: running;
+}
+
+@keyframes downloadArrow {
+    0% {
+        margin-top: -7px;
+        opacity: 1;
+    }
+
+    0.001% {
+        margin-top: -15px;
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        margin-top: 0;
+        opacity: 0.4;
+    }
+}
+
+/* --------------------------background--------------------- */
+body {
+
+    background-color: #193c6d;
+    filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#003073', endColorstr='#029797');
+    background-image: url(//img.alicdn.com/tps/TB1d.u8MXXXXXXuXFXXXXXXXXXX-1900-790.jpg);
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #003073), color-stop(100%, #029797));
+    background-image: -webkit-linear-gradient(135deg, #003073, #029797);
+    background-image: -moz-linear-gradient(45deg, #003073, #029797);
+    background-image: -ms-linear-gradient(45deg, #003073 0, #029797 100%);
+    background-image: -o-linear-gradient(45deg, #003073, #029797);
+    background-image: linear-gradient(135deg, #003073, #029797);
+    text-align: center;
+    margin: 0px;
+    /* margin: -50vh; */
+    /* padding: -80vh; */
+    overflow: hidden;
+}

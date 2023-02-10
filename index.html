@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMG2TEXT</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@v2.0.0-beta.2/dist/tesseract.min.js"></script>
+    
+</head>
+<body>
+      
+    <div class="nav">
+        <h1>Image to Text Converter</h1>
+    </div>
+
+    <form id="form">
+        <input type="file" id="fileInput" class="buttonDownload">
+        <textarea id="textOutput"></textarea>
+        <div class="loader" id="loader"></div>
+
+        <!-- ---------------------------------button---------------------- -->
+        <div class="buttons" type="submit">
+            <button class="btn"><span></span>
+                <p data-start="good luck!" data-text="Start!" data-title="Get Text"></p>
+            </button>
+        </div>
+    </form>
+    
+    <script src="./bg.js"></script>
+    <script>
+        // ----------------------------------------------
+       const form = document.getElementById('form');
+        const fileInput = document.getElementById('fileInput');
+        const textOutput = document.getElementById('textOutput');
+        const loader = document.getElementById('loader');
+              loader.style.display = 'none';
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            loader.style.display = 'block';
+            Tesseract.recognize(fileInput.files[0], 'eng', { logger: m => console.log(m) })
+                .then(({ data: { text } }) => {
+                    textOutput.value = text;
+                    loader.style.display = 'none';
+                });
+        });
+        </script>
+
+</body>
+</html>
