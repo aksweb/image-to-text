@@ -19,3 +19,9 @@ One of the main challenges we faced was fine-tuning the Tesseract.js library to 
 We will make an advanced version of this by making our own model and tuning it. This would involve training our own machine learning model for text recognition, which we can then integrate into the web app. This would potentially improve the accuracy of the text extraction, particularly for more challenging images.
 
 ## Built With
+### **javascript**
+### **tesseract.js**
+### **html**
+### **CSS**
+
+
