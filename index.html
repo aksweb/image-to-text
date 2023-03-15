@@ -14,21 +14,35 @@
     <div class="nav">
         <h1>Image to Text Converter</h1>
     </div>
-
-    <form id="form">
-        <input type="file" id="fileInput" class="buttonDownload">
-        <textarea id="textOutput"></textarea>
-        <div class="loader" id="loader"></div>
-
-        <!-- ---------------------------------button---------------------- -->
-        <div class="buttons" type="submit">
-            <button class="btn"><span></span>
-                <p data-start="good luck!" data-text="Start!" data-title="Get Text"></p>
-            </button>
-        </div>
-    </form>
+    <!-- <div class="scp">
+        <script src="./bg.js"></script>
+    </div> -->
     
-    <script src="./bg.js"></script>
+
+    <div class="cont">
+        <form id="form">
+                    
+            <div class="frm">
+                <input type="file" id="fileInput" class="buttonDownload"><br><br>
+            </div>
+            <textarea id="textOutput"></textarea>
+            <div id="cnt"> 
+                <div class="loader" id="loader"></div>
+            </div>
+            
+    
+            <!-- ---------------------------------button---------------------- -->
+            <div class="buttons" type="submit">
+                <button class="btn"><span></span>
+                    <p data-start="good luck!" data-text="Start!" data-title="Get Text"></p>
+                </button>
+            </div>
+        </form>
+
+    </div>
+
+    
+    
     <script>
         // ----------------------------------------------
        const form = document.getElementById('form');

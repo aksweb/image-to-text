@@ -1,44 +1,68 @@
+body {
+    
+    text-align: center;
+    align-items: center;
+    background-color: #bfdfec;
+    font-family: system-ui, calibri, serif;
+    
+}
+@keyframes movement {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: 560px 0px;
+    }
+}
+.cont{
+    background-repeat: repeat-x;
+    background-image: url("https://i.stack.imgur.com/b7z29.png");
+    animation: movement 10s linear infinite;
+
+}
 .nav{
-    margin-top: -25px;
-    padding-top: 5px;
-    padding-bottom: 1px;
-    /* padding: 5px auto 12px auto; */
-    /* padding: 1px; */
-    width:100%;
-    display: block;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 12vh;
     color: #f3f3f3;
-    background-color: #3498db;
+    background-color: #05385b;
+    z-index: 2;
 }
 .nav h1{
     font-size: 40px;
     font-family: monospace;
 }
 #form {
-    padding-top: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    margin-top: -40vh;
-    margin: -40vh auto 0vh auto;
-    margin-left: 20vw;
-    margin-right: 20vw;
-    /* margin: auto auto; */
+    
+    margin: 12vh auto;
 }
+.frm{
+    padding-top: 5vh;
+}
+
 #fileInput{
+
     color: white;
     font-family: 'Courier New', Courier, monospace;
 }
 #textOutput {
-    width: 500px;
+    width: 60%;
     height: 300px;
     margin-top: 20px;
+    display:inline-block;
     background-color: rgb(157, 232, 241);
-    /* box-shadow: 20px 50px 80px rgba(179, 38, 38, 0.25); */
-        border-radius: 10px;
+    border-radius: 10px;
+}
+#cnt{
+    width: min-content;
+    margin:auto;
 }
 
 .loader {
+
     border: 16px solid #f3f3f3;
     border-top: 16px solid #3498db;
     border-radius: 50%;
@@ -56,10 +80,7 @@
         transform: rotate(360deg);
     }
 }
-/* submit button */
-/*bg*/
-/*txt*/
-/*success*/
+
 .buttons {
     display: flex;
     justify-content: space-around;
@@ -321,22 +342,3 @@
     }
 }
 
-/* --------------------------background--------------------- */
-body {
-
-    background-color: #193c6d;
-    filter: progid: DXImageTransform.Microsoft.gradient(gradientType=1, startColorstr='#003073', endColorstr='#029797');
-    background-image: url(//img.alicdn.com/tps/TB1d.u8MXXXXXXuXFXXXXXXXXXX-1900-790.jpg);
-    background-size: 100%;
-    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0, #003073), color-stop(100%, #029797));
-    background-image: -webkit-linear-gradient(135deg, #003073, #029797);
-    background-image: -moz-linear-gradient(45deg, #003073, #029797);
-    background-image: -ms-linear-gradient(45deg, #003073 0, #029797 100%);
-    background-image: -o-linear-gradient(45deg, #003073, #029797);
-    background-image: linear-gradient(135deg, #003073, #029797);
-    text-align: center;
-    margin: 0px;
-    /* margin: -50vh; */
-    /* padding: -80vh; */
-    overflow: hidden;
-}
